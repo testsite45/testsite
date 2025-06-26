@@ -2,25 +2,127 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>??? ????</title>
-  <link rel="stylesheet" href="styles.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>מים שלנו</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      scroll-behavior: smooth;
+      background: #fdfdfd;
+      color: #333;
+    }
+    nav {
+      background: #00bfff;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero {
+      background: linear-gradient(to bottom right, #00bfff, #87cefa);
+      color: white;
+      text-align: center;
+      padding: 5rem 2rem;
+    }
+    .cta {
+      background: white;
+      color: #00bfff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 1rem;
+      display: inline-block;
+    }
+    section {
+      padding: 4rem 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    input, textarea {
+      padding: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    button {
+      background: #00bfff;
+      color: white;
+      border: none;
+      padding: 1rem;
+      font-size: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #eee;
+    }
+  </style>
 </head>
 <body>
 
+  <nav>
+    <a href="#about">About</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
   <header class="hero">
-    <h1>??? ????</h1>
+    <h1>מים שלנו</h1>
     <p>Cold water, warm hearts.</p>
     <a href="#about" class="cta">Learn More</a>
   </header>
 
-  <section id="about" class="section">
+  <section id="about">
     <h2>About</h2>
-    <p>In the spirit of chesed and hydration, we're keeping the community cool�one water bottle at a time.</p>
+    <p>In the spirit of chesed and hydration, we're keeping the community cool—one water bottle at a time. Join our effort to deliver refreshment with heart and humor.</p>
+  </section>
+
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="https://source.unsplash.com/random/800x600?water" alt="Random Water Image">
+      <img src="https://source.unsplash.com/random/800x600?community" alt="Random Community Image">
+      <img src="https://source.unsplash.com/random/800x600?kindness" alt="Random Chesed">
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form action="mailto:your@email.com" method="POST" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
   </section>
 
   <footer>
-    <p>� 2025 Eli's Campaign. All rights reserved.</p>
+    <p>© 2025 Eli's Campaign. All rights reserved.</p>
   </footer>
 
 </body>
