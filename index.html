@@ -3,29 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>מים שלנו</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>MayimX – מים שלנו</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: #f0f8ff;
-      color: #333;
-    }
-
-    /* Gradient drip */
-    .drip-top {
-      height: 20px;
-      background: repeating-linear-gradient(
-        -45deg,
-        #00bfff,
-        #00bfff 10px,
-        #8a2be2 10px,
-        #8a2be2 20px
-      );
+      background-color: #0a0a0a;
+      color: #e0e0e0;
     }
 
     nav {
@@ -34,188 +20,153 @@
       display: flex;
       justify-content: center;
       gap: 2rem;
-      background: linear-gradient(90deg, #00bfff, #8a2be2, #ff69b4);
-      background-size: 400% 400%;
-      animation: navBG 10s ease infinite;
       padding: 1rem;
+      background: rgba(10,10,10,0.95);
+      border-bottom: 1px solid #222;
       z-index: 99;
     }
-
     nav a {
-      color: #fff;
+      color: #e0e0e0;
       text-decoration: none;
-      font-weight: bold;
-      font-size: 1rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #00bfff;
     }
 
-    @keyframes navBG {
+    .hero {
+      background: linear-gradient(135deg, #000011, #000022);
+      background-size: 400% 400%;
+      padding: 6rem 2rem;
+      text-align: center;
+      animation: bgShift 20s ease infinite;
+    }
+    @keyframes bgShift {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
-
-    .hero {
-      text-align: center;
-      padding: 5rem 2rem;
-      color: white;
-      background: linear-gradient(-45deg, #00bfff, #8a2be2, #ff69b4);
-      background-size: 400% 400%;
-      animation: heroFlow 15s ease infinite;
+    .hero h1 {
+      font-size: 3.2rem;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
     }
-
-    @keyframes heroFlow {
-      0% { background-position: 0% 0%; }
-      50% { background-position: 100% 100%; }
-      100% { background-position: 0% 0%; }
+    .hero p {
+      font-size: 1.2rem;
+      color: #ccc;
     }
-
     .cta {
-      background: #fff;
-      color: #8a2be2;
-      padding: 0.75rem 1.5rem;
-      border-radius: 6px;
-      text-decoration: none;
+      margin-top: 2rem;
+      background: #00bfff;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      border-radius: 5px;
+      color: #111;
       font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
       display: inline-block;
-      margin-top: 1.2rem;
     }
-
     section {
       padding: 4rem 2rem;
-      max-width: 900px;
-      margin: auto;
+      max-width: 950px;
+      margin: 0 auto;
     }
-
     section h2 {
       text-align: center;
       font-size: 2rem;
-      color: #8a2be2;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-
-    .gallery img {
-      width: 100%;
-      border-radius: 10px;
-    }
-
-    blockquote {
-      margin: 2rem auto;
-      font-style: italic;
-      color: #444;
-      border-left: 5px solid #8a2be2;
-      padding-left: 1rem;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-
-    input, textarea {
-      padding: 1rem;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-    }
-
-    button {
-      background: #00bfff;
-      color: white;
-      border: none;
-      padding: 1rem;
-      font-size: 1rem;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    footer {
-      background: #eee;
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.85rem;
-    }
-
-    .counter {
-      font-size: 2rem;
-      text-align: center;
       color: #00bfff;
-      margin-top: 1rem;
+    }
+    .divider {
+      height: 2px;
+      background: linear-gradient(to right, #222, #444, #222);
+      margin: 3rem 0;
     }
   </style>
 </head>
 <body>
 
-  <div class="drip-top"></div>
-
   <nav>
-    <a href="#about"><i class="fas fa-hand-holding-water"></i> About</a>
-    <a href="#gallery"><i class="fas fa-image"></i> Gallery</a>
+    <a href="#about"><i class="fas fa-circle-info"></i> About</a>
+    <a href="#gallery"><i class="fas fa-images"></i> Gallery</a>
     <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
   </nav>
 
   <header class="hero">
-    <h1>מים שלנו</h1>
-    <p>Cold water, warm hearts. Powered by community & compassion.</p>
-    <a href="#about" class="cta"><i class="fas fa-heart"></i> Learn More</a>
+    <h1>MayimX</h1>
+    <p>Hydration. Compassion. Galactic Vibes.</p>
+    <a class="cta" href="#about"><i class="fas fa-hand-holding-water"></i> Join the Flow</a>
   </header>
 
   <section id="about">
-    <h2><i class="fas fa-seedling"></i> About the Mission</h2>
-    <p>Last summer, we gave out 4,000+ bottles of water across neighborhoods and parks. Our goal: not just hydration—but heartfelt connection.</p>
-    <blockquote>“כִּי יִשְׂרָאֵל עָם לְעֵצָה יֵשׁ לוֹ – hydration is a mitzvah of empathy and action.”</blockquote>
-    <div class="counter" id="hydrationCount">💧 Bottles Shared: <span id="count">0</span></div>
-  </section>
-
-  <section id="gallery">
-    <h2><i class="fas fa-images"></i> Gallery</h2>
-    <p>Here are a few refreshing scenes that capture the spirit of our project:</p>
-    <div class="gallery">
-      <img src="https://source.unsplash.com/random/800x600?water" alt="Water Image">
-      <img src="https://source.unsplash.com/random/800x600?kindness" alt="Kindness Image">
-      <img src="https://source.unsplash.com/random/800x600?community" alt="Community Image">
+    <h2>Our Mission</h2>
+    <p>In a world thirsting for kindness, we distribute cold water and warm hearts throughout the community. Each bottle is more than a mitzvah—it’s a moment of human connection.</p>
+    <blockquote style="margin-top:2rem; font-style: italic; color:#aaa; border-left: 4px solid #00bfff; padding-left:1rem;">
+      “כִּי יִשְׂרָאֵל עָם לְעֵצָה יֵשׁ לוֹ – Hydration is a mitzvah of empathy and action.”
+    </blockquote>
+    <div class="divider"></div>
+    <div style="text-align:center; font-size:1.5rem; margin-top:2rem;">
+      💧 Bottles Distributed: <span id="count">0</span>
     </div>
   </section>
 
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <p style="text-align:center;">A glimpse of compassion in motion:</p>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 2rem;">
+      <img src="https://source.unsplash.com/random/800x600?water" alt="Random Water Image" style="width:100%; border-radius:6px;">
+      <img src="https://source.unsplash.com/random/800x600?community" alt="Random Community Image" style="width:100%; border-radius:6px;">
+      <img src="https://source.unsplash.com/random/800x600?kindness" alt="Random Chesed" style="width:100%; border-radius:6px;">
+    </div>
+    <div class="divider"></div>
+  </section>
+
   <section id="contact">
-    <h2><i class="fas fa-comments"></i> Contact Us</h2>
-    <p>Want to volunteer, suggest a location, or just say hi?</p>
-    <form action="mailto:your@email.com" method="POST" enctype="text/plain">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" placeholder="Your Message" rows="5"></textarea>
-      <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+    <h2>Contact Mission Control</h2>
+    <p style="text-align:center;">Want to join, suggest a drop-off zone, or just say hey?</p>
+    <form action="mailto:your@email.com" method="POST" enctype="text/plain"
+      style="display:flex; flex-direction:column; max-width:600px; margin:2rem auto; gap:1rem;">
+      <input type="text" name="name" placeholder="Your Name" required
+        style="padding:1rem; border:1px solid #444; background:#111; color:#eee; border-radius:5px;">
+      <input type="email" name="email" placeholder="Your Email" required
+        style="padding:1rem; border:1px solid #444; background:#111; color:#eee; border-radius:5px;">
+      <textarea name="message" placeholder="Your Message" rows="5"
+        style="padding:1rem; border:1px solid #444; background:#111; color:#eee; border-radius:5px;"></textarea>
+      <button type="submit"
+        style="background:#00bfff; border:none; padding:1rem; font-weight:bold; border-radius:5px; color:#111; cursor:pointer;">
+        <i class="fas fa-paper-plane"></i> Send Message
+      </button>
     </form>
   </section>
 
-  <footer>
-    <p>© 2025 Eli's Campaign. All rights reserved.</p>
+  <footer style="text-align:center; padding:2rem; background:#111; font-size:0.85rem;">
+    <p>© 2025 MayimX · Powered by Chesed · Built with 🚀</p>
   </footer>
-
   <script>
-    // Counter animation
+    // Hydration Counter Animation
     const countEl = document.getElementById("count");
     let count = 0;
-    const target = 4235;
+    const target = 4235; // total bottles distributed
 
-    function animateCounter() {
+    function animateCount() {
       const interval = setInterval(() => {
+        const increment = Math.floor(Math.random() * 10) + 1;
+        count += increment;
         if (count >= target) {
+          count = target;
           clearInterval(interval);
-        } else {
-          count += Math.floor(Math.random() * 7) + 1;
-          if (count > target) count = target;
-          countEl.textContent = count.toLocaleString();
         }
-      }, 50);
+        countEl.textContent = count.toLocaleString();
+      }, 40);
     }
-    animateCounter();
+    animateCount();
   </script>
 
 </body>
